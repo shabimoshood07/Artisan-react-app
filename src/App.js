@@ -1,12 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Import Pages
-import About from "./pages/About";
+import Search from "./pages/Search";
 import RegArtisan from "./pages/RegArtisan";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
 import SingleArtisan from "./pages/SingleArtisan";
 import Signup from "./pages/Signup";
+import LoginPage from "./pages/LoginPage";
 
 // Import components
 import Artisan from "./components/Artisan";
@@ -19,10 +21,19 @@ import Register from "./components/Register";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Artisans</h1>
-      <Loading />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/user/:id" element={<RegArtisan />} />
+        <Route path="/artisan" element={<Search />} />
+        <Route path="/artisan/:id" element={<SingleArtisan />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -94,39 +96,59 @@ LOADING PAGE
 
 /* ***************************
 ******************************
+LOGO DESIGN
+*************************
+************************************/
+
+.logo-con {
+  position: relative;
+  height: fit-content;
+  padding: 0;
+  display: block;
+}
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+.logo {
+  width: 30px;
+  position: absolute;
+  top: 45%;
+  left: 35%;
+}
+.a {
+  color: #d90368;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: "Neonderthaw", cursive;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+/* ***************************
+******************************
 NAVBAR
 *************************
 ************************************/
-.logo {
-  width: 20px;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  color: #582c4d;
-}
-.logo-con {
-  /* border: solid; */
-  position: relative;
-}
+
 .nav-toggle {
-  color: #582c4d;
+  padding: 0;
+  margin: 0;
 }
 .nav-icon {
   color: #582c4d;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 .nav-center {
-  /* border: solid; */
   width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  max-width: 1000px;
 }
 
 .nav-header {
-  /* border: solid; */
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -134,9 +156,24 @@ NAVBAR
 }
 
 .nav-link {
-  border: solid red;
   transition: all 0.5s;
   overflow: hidden;
+}
+.nav-link ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ul-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ul-list li {
+  padding: 0;
+  margin: 0;
 }
 
 .show {
@@ -151,12 +188,26 @@ NAVBAR
     display: none;
   }
   .nav-header {
+    border: solid;
     width: fit-content;
   }
   .nav-center {
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .hide {
     height: fit-content !important;
+  }
+  .show {
+    height: fit-content !important;
+  }
+  .ul-list ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .ul-list li {
+    margin-left: 2rem;
+    font-size: 1.2rem;
   }
 }

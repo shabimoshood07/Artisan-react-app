@@ -11,8 +11,8 @@ function Navbar() {
         <div className="nav-header">
           <div className="logo-con">
             <Link to="/" className="link">
-              <h1>
-                <span>A</span>
+              <h1 className="logo-text">
+                <span className="a">A</span>
                 <span>R</span>
                 <span>T</span>
                 <span>I</span>
@@ -29,9 +29,9 @@ function Navbar() {
         </div>
 
         <div className={showNav ? "show nav-link" : "hide nav-link"}>
-          <ul>
-            {!user ? (
-              <div className="">
+          {!user ? (
+            <div className="ul-list">
+              <ul>
                 <li>
                   <Link to="/login" className="link">
                     Login
@@ -42,13 +42,11 @@ function Navbar() {
                     Resister
                   </Link>
                 </li>
-              </div>
-            ) : (
-              <div>
-                <button>Logout</button>
-              </div>
-            )}
-          </ul>
+              </ul>
+            </div>
+          ) : (
+            <button className="logout-btn">Logout</button>
+          )}
         </div>
       </section>
     </nav>

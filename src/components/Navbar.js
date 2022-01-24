@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../src/logo.svg";
 function Navbar() {
   const [user, setUser] = useState(false);
   const [showNav, setShowNAv] = useState(false);
+  useEffect(() => {
+    setShowNAv(false);
+  }, []);
+
   return (
     <nav className="navbar">
       <section className="nav-center">
@@ -14,17 +18,23 @@ function Navbar() {
               <h1 className="logo-text">
                 <span className="a">A</span>
                 <span>R</span>
-                <span>T</span>
-                <span>I</span>
-                <span>S</span>
+                <span className="t">T</span>
+                <span className="i">I</span>
+                <span className="l">
+                  <img src={logo} alt="logo" className="logo" />
+                </span>
+                <span className="s">S</span>
                 <span>A</span>
                 <span>N</span>
               </h1>
-              <img src={logo} alt="logo" className="logo" />
             </Link>
           </div>
           <div className="nav-toggle" onClick={() => setShowNAv(!showNav)}>
-            <FaBars className="nav-icon" />
+            {showNav ? (
+              <FaTimes className="nav-icon" />
+            ) : (
+              <FaBars className="nav-icon" />
+            )}
           </div>
         </div>
 
@@ -33,13 +43,18 @@ function Navbar() {
             <div className="ul-list">
               <ul>
                 <li>
-                  <Link to="/login" className="link">
+                  <Link to="/login" className="link links">
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link to="/signup" className="link">
-                    Resister
+                  <Link to="/signup" className="link links">
+                    Register
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/artisan" className="link links">
+                    Search
                   </Link>
                 </li>
               </ul>

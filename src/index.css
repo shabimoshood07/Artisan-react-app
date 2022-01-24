@@ -104,31 +104,55 @@ LOGO DESIGN
   position: relative;
   height: fit-content;
   padding: 0;
-  display: block;
+}
+.logo-con:hover .logo {
+  transform: scale(1.1);
 }
 .logo-text {
   font-size: 1.3rem;
   font-weight: bolder;
+  letter-spacing: 0.1rem;
+
+  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1); */
+
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
 }
+
 .logo {
-  width: 30px;
+  width: 40px;
+  transition: all 0.5s;
+
   position: absolute;
-  top: 45%;
-  left: 35%;
+  z-index: -999;
+  top: 7%;
+  left: 30%;
 }
 .a {
   color: #d90368;
   font-size: 2rem;
   font-weight: bolder;
+  margin-right: -0.2rem;
   font-family: "Neonderthaw", cursive;
-  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  /* text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); */
 }
 /* ***************************
 ******************************
 NAVBAR
 *************************
 ************************************/
-
+.navbar {
+  /* border: solid; */
+  padding: 1rem 0;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  box-shadow: rgba(217, 3, 104, 0.4) 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.65) 0px 4px 6px -1px,
+    rgba(24, 21, 40, 0.08) 0px 1px 0px inset;
+}
 .nav-toggle {
   padding: 0;
   margin: 0;
@@ -139,6 +163,7 @@ NAVBAR
   cursor: pointer;
 }
 .nav-center {
+  /* border: solid; */
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -149,6 +174,7 @@ NAVBAR
 }
 
 .nav-header {
+  /* border: solid; */
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -156,8 +182,19 @@ NAVBAR
 }
 
 .nav-link {
-  transition: all 0.5s;
+  position: fixed;
+  /* border: solid; */
+  z-index: 999;
+  background: #181528;
+  transition: all 0.7s;
   overflow: hidden;
+  top: 75px;
+  right: 0;
+  width: 50%;
+  height: 40vh;
+  max-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .nav-link ul {
   display: flex;
@@ -174,27 +211,36 @@ NAVBAR
 .ul-list li {
   padding: 0;
   margin: 0;
+  font-size: 1.5rem;
+}
+.links {
+  color: #d90368;
 }
 
-.show {
-  height: 100px;
-}
 .hide {
-  height: 0px;
+  /* height: 0px; */
+  transform: translateX(500px);
 }
 
 @media screen and (min-width: 800px) {
   .nav-toggle {
     display: none;
   }
+  .nav-link {
+    position: unset;
+    background: transparent;
+    box-shadow: unset;
+  }
   .nav-header {
-    border: solid;
+    margin: 0;
+    /* border: solid; */
     width: fit-content;
   }
   .nav-center {
+    /* border: solid; */
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
   }
   .hide {
     height: fit-content !important;

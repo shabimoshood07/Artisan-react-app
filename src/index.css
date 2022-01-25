@@ -112,7 +112,8 @@ LOGO DESIGN
   font-size: 1.3rem;
   font-weight: bolder;
   letter-spacing: 0.1rem;
-
+  /* color: #181528; */
+  color: #582c4d;
   /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1); */
 
@@ -162,8 +163,6 @@ NAVBAR
   cursor: pointer;
 }
 .nav-center {
-  border: solid;
-
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -183,11 +182,11 @@ NAVBAR
 
 .nav-link {
   position: fixed;
-  /* border: solid red; */
+
   z-index: 999;
-  background: #181528;
+  background: rgba(24, 21, 40, 0.7);
   transition: all 0.7s;
-  overflow: hidden;
+
   top: 75px;
   right: 0;
   width: 50%;
@@ -204,9 +203,55 @@ NAVBAR
   align-items: center;
 }
 .logout-btn {
-  height: fit-content;
-  width: fit-content;
   margin-top: 1rem;
+  align-items: center;
+  appearance: none;
+  background-color: #181528;
+  /* background: rgba(24, 21, 40, 0.9); */
+  font-weight: bolder;
+  border-radius: 4px;
+  border-width: 0;
+  /* box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset; */
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+  /* color: #d90368; */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  color: #f1e9da;
+  cursor: pointer;
+  display: inline-flex;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  padding: 0 0.6rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.logout-btn:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.logout-btn:hover {
+  /* background-color: rgb(217, 3, 104); */
+  box-shadow: rgba(217, 3, 104, 0.16) 0px 1px 4px,
+    rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.logout-btn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 .nav-link ul {
   display: flex;

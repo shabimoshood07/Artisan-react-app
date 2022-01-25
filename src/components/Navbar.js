@@ -1,13 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../src/logo.svg";
 function Navbar() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [showNav, setShowNAv] = useState(false);
+
+  // close NAVBAR onclick
+  const ref = useRef();
   useEffect(() => {
-    setShowNAv(false);
-  }, []);
+    const checkIfClickedOutside = (e) => {
+      if (showNav && ref.current && !ref.current.contains(e.target)) {
+        setShowNAv(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [showNav]);
 
   return (
     <nav className="navbar">
@@ -38,29 +51,44 @@ function Navbar() {
           </div>
         </div>
 
-        <div className={showNav ? "show nav-link" : "hide nav-link"}>
+        <div className={showNav ? "show nav-link" : "hide nav-link"} ref={ref}>
           {!user ? (
             <div className="ul-list">
               <ul>
                 <li>
-                  <Link to="/login" className="link links">
+                  <Link
+                    to="/login"
+                    onClick={() => setShowNAv(false)}
+                    className="link links"
+                  >
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link to="/signup" className="link links">
+                  <Link
+                    to="/signup"
+                    onClick={() => setShowNAv(false)}
+                    className="link links"
+                  >
                     Register
                   </Link>
                 </li>
                 <li>
-                  <Link to="/artisan" className="link links">
+                  <Link
+                    to="/artisan"
+                    onClick={() => setShowNAv(false)}
+                    className="link links"
+                  >
                     Search
                   </Link>
                 </li>
               </ul>
             </div>
           ) : (
-            <button className="logout-btn">Logout</button>
+            <div className="nav-btn-container">
+              <button className="logout-btn">Logout</button>
+              <button className="logout-btn edit-btn">Edit profile</button>
+            </div>
           )}
         </div>
       </section>

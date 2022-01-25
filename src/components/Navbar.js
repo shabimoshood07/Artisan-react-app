@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../src/logo.svg";
 function Navbar() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [showNav, setShowNAv] = useState(false);
 
   // close NAVBAR onclick

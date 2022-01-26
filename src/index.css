@@ -127,7 +127,6 @@ LOGO DESIGN
 .logo {
   width: 40px;
   transition: all 0.5s;
-
   position: absolute;
   z-index: -999;
   top: 7%;
@@ -178,18 +177,19 @@ NAVBAR
 .nav-link {
   position: fixed;
   z-index: 999;
-  background: rgba(255, 240, 0, 0.8);
+  background: rgba(255, 240, 0, 0.9);
   transition: all 0.7s;
   top: 72px;
-  right: 0;
+  left: 0px;
   width: 50%;
   height: 40vh;
   max-width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+  box-shadow: rgba(217, 3, 104, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .nav-btn-container {
-  /* border: solid green; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,14 +244,14 @@ NAVBAR
 .nav-link ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: fit-content;
+  padding-left: 1rem;
 }
 .ul-list {
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .ul-list li {
   font-size: 1.2rem;
@@ -260,16 +260,22 @@ NAVBAR
   transition: all 0.7s;
 }
 .ul-list li:hover {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .links {
   color: #d90368;
-  border-bottom: solid #181528 2px;
+  /* border-bottom: solid #181528 2px; */
 }
-
+.fa {
+  margin-right: 0.2rem;
+  color: #181528;
+}
 .hide {
-  transform: translateX(500px);
+  /* transform: translateX(0px); */
+  left: -500px;
+
+  /* left: 0; */
 }
 
 @media screen and (min-width: 800px) {
@@ -330,5 +336,8 @@ NAVBAR
   }
   .ul-list li:hover {
     padding-left: 0;
+  }
+  .fa {
+    display: none;
   }
 }

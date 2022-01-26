@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineHowToReg } from "react-icons/md";
 import logo from "../../src/logo.svg";
 function Navbar() {
   const [user, setUser] = useState(false);
@@ -61,6 +63,7 @@ function Navbar() {
                     onClick={() => setShowNAv(false)}
                     className="link links"
                   >
+                    <MdOutlineHowToReg className="fa" />
                     Login
                   </Link>
                 </li>
@@ -70,6 +73,7 @@ function Navbar() {
                     onClick={() => setShowNAv(false)}
                     className="link links"
                   >
+                    <CgProfile className="fa" />
                     Register
                   </Link>
                 </li>
@@ -79,6 +83,7 @@ function Navbar() {
                     onClick={() => setShowNAv(false)}
                     className="link links"
                   >
+                    <FaSearch className="fa" />
                     Search
                   </Link>
                 </li>

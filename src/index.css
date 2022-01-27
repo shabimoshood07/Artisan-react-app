@@ -338,6 +338,9 @@ NAVBAR
   .logout-btn:hover {
     transform: translateY(-5px);
   }
+  .landing-btn .fa {
+    display: block;
+  }
 }
 
 /* ***************************
@@ -364,7 +367,7 @@ LANDING PAGE
   background-color: rgba(24, 21, 40, 0.8);
   border-radius: 10px;
 }
-.home .text p {
+.home .landing-text p {
   /* border: solid; */
   text-align: justify;
   font-size: 16px;
@@ -482,7 +485,33 @@ LANDING PAGE
 }
 
 @media screen and (min-width: 800px) {
+  .common {
+    max-width: 100vw;
+    min-height: 85vh;
+    /* border: solid; */
+    display: flex;
+  }
   .home-inner {
+    /* border: solid; */
     flex-direction: row;
+    max-width: 800px;
+    margin: 50px auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .landing-btn-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: auto 0;
+    /* border: solid; */
+  }
+
+  .landing-btn {
+    margin: 1rem 0;
   }
 }

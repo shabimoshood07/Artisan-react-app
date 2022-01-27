@@ -19,7 +19,7 @@ function Landing() {
         <BsScrewdriver className="img-tools shape5" />
       </div>
       <div className="home-inner">
-        <div className="text">
+        <div className="landing-text">
           <h1>
             <span className="a">A</span>bout
           </h1>

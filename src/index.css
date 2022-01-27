@@ -347,51 +347,73 @@ LANDING PAGE
 ************************************/
 
 .common {
-  min-height: 90vh;
-  position: relative;
   /* border: solid; */
+  min-height: 80vh;
+  position: relative;
   overflow: hidden;
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 .home-inner {
   /* border: solid; */
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  background-color: rgba(24, 21, 40, 0.8);
+  border-radius: 10px;
 }
 .home .text p {
   /* border: solid; */
-  padding: 1rem;
   text-align: justify;
-  font-size: 18px;
-  line-height: 30px;
-  color: #8d9eaa;
-  /* margin: 30px 0 60px; */
+  font-size: 16px;
+  line-height: 20px;
+  color: #f1e9da;
 }
 .home h1 {
-  font-size: 20px;
-  text-transform: uppercase;
-  position: relative;
+  font-size: 25px;
+  color: #fff000;
+  font-style: italic;
+  font-weight: bolder;
+  /* text-transform: uppercase; */
 }
-
-.home .btn {
-  font-size: 18px;
-  color: #fff;
+.landing-btn-container {
+  /* border: solid; */
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing-btn {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: transparent;
+  background-color: #582c4d;
+  margin-right: 0.5rem;
+  font-weight: bolder;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 30px;
+  padding: 0 0.5rem;
+  transition: all 0.5s;
+}
+.landing-btn .fa {
+  color: #181528;
+  font-size: 1.2rem;
+}
+.landing-links {
   text-decoration: none;
-  padding: 15px 20px;
-  border: 1px solid #ffffff40;
+  color: wheat;
+  display: flex;
+  align-items: center;
 }
-.home .btn:hover {
-  background-color: #ffffff40;
-}
-/* .shape {
-  border: solid;
-} */
 .shape .img-tools {
   position: absolute;
   width: 100%;
   z-index: -9;
-  font-size: 2rem;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #d90368;
 }
 .shape .shape1 {
   right: 0px;
@@ -456,5 +478,11 @@ LANDING PAGE
   100% {
     opacity: 1;
     transform: translate(0, 800px) rotate(720deg);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home-inner {
+    flex-direction: row;
   }
 }

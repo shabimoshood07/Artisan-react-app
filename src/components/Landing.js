@@ -1,4 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineHowToReg } from "react-icons/md";
 import { GiSpanner, GiSewingMachine, GiMonkeyWrench } from "react-icons/gi";
 import { FiScissors } from "react-icons/fi";
 import { BsScrewdriver } from "react-icons/bs";
@@ -15,7 +20,9 @@ function Landing() {
       </div>
       <div className="home-inner">
         <div className="text">
-          <h1>About</h1>
+          <h1>
+            <span className="a">A</span>bout
+          </h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
             illum, sed sit eius, delectus placeat iste dolores repellendus optio
@@ -31,10 +38,25 @@ function Landing() {
             quaerat ad. Dignissimos, cupiditate incidunt.
           </p>
         </div>
-        <div className="img">
-          <button>login</button>
-          <button>search</button>
-          <button>register</button>
+        <div className="landing-btn-container">
+          <button className="landing-btn">
+            <Link className="landing-links" to="/login">
+              <MdOutlineHowToReg className="fa" />
+              Login
+            </Link>
+          </button>
+          <button className="landing-btn">
+            <Link className="landing-links" to="/signup">
+              <CgProfile className="fa" />
+              Register
+            </Link>
+          </button>
+          <button className="landing-btn">
+            <Link className="landing-links" to="/artisan">
+              <FaSearch className="fa" />
+              Search
+            </Link>
+          </button>
         </div>
       </div>
     </section>

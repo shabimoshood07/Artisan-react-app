@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineHowToReg } from "react-icons/md";
 import logo from "../../src/logo.svg";
 function Navbar() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [showNav, setShowNAv] = useState(false);
 
   // close NAVBAR onclick

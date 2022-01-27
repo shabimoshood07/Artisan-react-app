@@ -112,11 +112,7 @@ LOGO DESIGN
   font-size: 1.3rem;
   font-weight: bolder;
   letter-spacing: 0.1rem;
-  /* color: #181528; */
   color: #582c4d;
-  /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.1); */
-
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
@@ -192,8 +188,9 @@ NAVBAR
 .nav-btn-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  padding-left: 1rem;
 }
 .logout-btn {
   margin-top: 1rem;
@@ -224,6 +221,7 @@ NAVBAR
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 13px;
+  text-align: left;
 }
 
 .logout-btn:focus {
@@ -232,9 +230,9 @@ NAVBAR
 }
 
 .logout-btn:hover {
-  /* background-color: rgb(217, 3, 104); */
   box-shadow: rgba(217, 3, 104, 0.25) 0px 6px 12px -2px,
     rgba(217, 3, 104) 0px 3px 7px -3px;
+  transform: translateX(5px);
 }
 
 .logout-btn:active {
@@ -272,10 +270,7 @@ NAVBAR
   color: #181528;
 }
 .hide {
-  /* transform: translateX(0px); */
   left: -500px;
-
-  /* left: 0; */
 }
 
 @media screen and (min-width: 800px) {
@@ -339,5 +334,127 @@ NAVBAR
   }
   .fa {
     display: none;
+  }
+  .logout-btn:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ***************************
+******************************
+LANDING PAGE
+*************************
+************************************/
+
+.common {
+  min-height: 90vh;
+  position: relative;
+  /* border: solid; */
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.home-inner {
+  /* border: solid; */
+  display: flex;
+  flex-direction: column;
+}
+.home .text p {
+  /* border: solid; */
+  padding: 1rem;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 30px;
+  color: #8d9eaa;
+  /* margin: 30px 0 60px; */
+}
+.home h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.home .btn {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  border: 1px solid #ffffff40;
+}
+.home .btn:hover {
+  background-color: #ffffff40;
+}
+/* .shape {
+  border: solid;
+} */
+.shape .img-tools {
+  position: absolute;
+  width: 100%;
+  z-index: -9;
+  font-size: 2rem;
+}
+.shape .shape1 {
+  right: 0px;
+  top: 10px;
+  width: 450px;
+  opacity: 0.5;
+  transform-origin: center;
+  animation: shape linear 30s infinite reverse;
+}
+.shape .shape2 {
+  left: 10px;
+  bottom: 500px;
+  width: 450px;
+  opacity: 0.5;
+  transform-origin: center;
+  animation: shape linear 30s infinite reverse;
+}
+@keyframes shape {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.shape .shape3 {
+  /* border: solid red; */
+  top: 0;
+  left: 0;
+  width: 250px;
+  opacity: 0.4;
+  transform-origin: center;
+  animation: shape3 linear 20s infinite;
+  transform: translate(-100px, -50px) rotate(0deg);
+}
+@keyframes shape3 {
+  100% {
+    transform: translate(1300px, 600px) rotate(360deg);
+  }
+}
+.shape .shape4 {
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  opacity: 0.4;
+  transform-origin: center;
+  animation: shape4 linear 20s infinite 5s;
+  transform: translate(700px, 80px) rotate(0deg);
+}
+@keyframes shape4 {
+  100% {
+    transform: translate(100px, -600px) rotate(360deg);
+  }
+}
+.shape .shape5 {
+  left: 500px;
+  top: 0;
+  width: 100px;
+  opacity: 0;
+  transform-origin: center;
+  animation: shape5 linear 25s infinite;
+  transform: translate(0, -150px) rotate(0deg);
+}
+@keyframes shape5 {
+  100% {
+    opacity: 1;
+    transform: translate(0, 800px) rotate(720deg);
   }
 }

@@ -1,11 +1,7 @@
 import React from "react";
-
+import Register from "../components/Register";
 function Signup() {
-  return (
-    <div>
-      <h1>Signup or login</h1>
-    </div>
-  );
+  return <Register />;
 }
 
 export default Signup;

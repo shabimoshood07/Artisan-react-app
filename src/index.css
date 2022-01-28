@@ -602,6 +602,7 @@ LOGIN JS
   padding: 0 0.5rem;
   transition: all 0.5s;
   display: block;
+  width: 150px;
   margin: 0 auto;
   letter-spacing: 0.08rem;
   font-size: 1.1rem;
@@ -620,7 +621,7 @@ REGISTER JS
 ************************************/
 .reg-body {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -629,7 +630,7 @@ REGISTER JS
 .reg-container {
   max-width: 700px;
   width: 100%;
-  background: darkgrey;
+  background-color: rgba(24, 21, 40, 0.8);
   padding: 25px 30px;
   border-radius: 5px;
   margin-top: auto;

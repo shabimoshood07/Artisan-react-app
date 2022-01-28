@@ -7,11 +7,11 @@ function Login() {
       <form>
         <div className="user-box">
           <input type="text" name="" placeholder="Username"></input>
-          <label for="Username"></label>
+          <label htmlFor="Username"></label>
         </div>
         <div className="user-box">
-          <input type="password" />
-          <label for="password"></label>
+          <input type="password" placeholder="Password" />
+          <label htmlFor="password"></label>
         </div>
         <button type="submit">Submit</button>
       </form>

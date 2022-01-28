@@ -363,12 +363,15 @@ LANDING PAGE
   padding: 1rem;
 }
 .home-inner {
-  /* border: solid; */
   display: flex;
   flex-direction: column;
   padding: 1rem;
   background-color: rgba(24, 21, 40, 0.8);
   border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px; */
 }
 .home .landing-text p {
   /* border: solid; */
@@ -399,10 +402,16 @@ LANDING PAGE
   font-weight: bolder;
   border-radius: 4px;
   cursor: pointer;
-  height: 30px;
+  height: 35px;
   padding: 0 0.5rem;
   transition: all 0.5s;
+  font-size: 1.2rem;
 }
+.landing-btn:hover {
+  /* color: #181528; */
+  transform: translateY(-7px);
+}
+
 .landing-btn .fa {
   color: #181528;
   font-size: 1.2rem;
@@ -528,18 +537,18 @@ LOGIN JS
 .header-text {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: #fbf7c5;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .login-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: rgba(24, 21, 40, 0.8);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -568,7 +577,7 @@ LOGIN JS
   left: 0;
   padding: 10px 0;
   font-size: 100px;
-  color: #fff;
+  color: #d90368;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -582,25 +591,26 @@ LOGIN JS
 }
 
 .login-wrapper form button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: 0.5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: transparent;
+  background-color: #582c4d;
+  color: #fbf7c5;
+  font-weight: bolder;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 0.5rem;
+  transition: all 0.5s;
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 0.08rem;
+  font-size: 1.1rem;
+  transition: all 0.7s ease-in-out;
 }
 
 .login-wrapper button:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
+  color: #582c4d;
+  background-color: #fbf7c5;
 }
 
 /* ***************************

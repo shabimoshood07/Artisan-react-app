@@ -628,9 +628,11 @@ REGISTER JS
 }
 
 .reg-container {
+  color: #fbf7c5;
   max-width: 700px;
   width: 100%;
   background-color: rgba(24, 21, 40, 0.8);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   padding: 25px 30px;
   border-radius: 5px;
   margin-top: auto;
@@ -640,6 +642,7 @@ REGISTER JS
   font-size: 25px;
   font-weight: 500;
   position: relative;
+  color: #fbf7c5;
 }
 
 .reg-container .title::before {

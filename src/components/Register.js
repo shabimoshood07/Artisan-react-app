@@ -1,7 +1,23 @@
 import React from "react";
 import states from "../Data";
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from "react-places-autocomplete";
+
 function Register() {
-  console.log(states);
+  const [address, setAddress] = React.useState("");
+  const [coordinates, setCoordinates] = React.useState({
+    lat: null,
+    lng: null,
+  });
+  const handleSelect = async (value) => {
+    const results = await geocodeByAddress(value);
+    const latLng = await getLatLng(results[0]);
+    setAddress(value);
+    setCoordinates(latLng);
+  };
+
   return (
     <div className="reg-body">
       <div className="reg-container">
@@ -29,6 +45,14 @@ function Register() {
               ></input>
             </div>
             <div className="input-box">
+              <span className="details">Address</span>
+              <input
+                type="text"
+                placeholder="Enter your address "
+                required
+              ></input>
+            </div>
+            <div className="input-box">
               <span className="details">Phone Number</span>
               <input type="text" placeholder="Phone Number" required></input>
             </div>
@@ -45,10 +69,54 @@ function Register() {
               ></input>
             </div>
           </div>
+
+          {/* SELECT OPTION */}
           <div className="user-options">
             <div className="input-options">
+              {/* LOCATION */}
               <label>--Select your State--</label>
-              <select>
+
+              <div>
+                <PlacesAutocomplete
+                  value={address}
+                  onChange={setAddress}
+                  onSelect={handleSelect}
+                >
+                  {({
+                    getInputProps,
+                    suggestions,
+                    getSuggestionItemProps,
+                    loading,
+                  }) => (
+                    <div>
+                      <input
+                        {...getInputProps({ placeholder: "Type address" })}
+                      />
+
+                      <div>
+                        {loading ? <div>...loading</div> : null}
+
+                        {suggestions.map((suggestion) => {
+                          const style = {
+                            backgroundColor: suggestion.active
+                              ? "#41b6e6"
+                              : "#fff",
+                          };
+
+                          return (
+                            <div
+                              {...getSuggestionItemProps(suggestion, { style })}
+                            >
+                              {suggestion.description}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </PlacesAutocomplete>
+              </div>
+              {/* <select>
                 {states.map((eachstate) => {
                   const { id, stateName, statevalue } = eachstate;
                   return (
@@ -57,7 +125,7 @@ function Register() {
                     </option>
                   );
                 })}
-              </select>
+              </select> */}
               <label>--Profession--</label>
               <select>
                 <option value="Choose Options">Choose Options</option>

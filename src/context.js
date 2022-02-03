@@ -3,6 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 const AppContext = React.createContext();
 
 const Appprovider = ({ children }) => {
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTer] = useState("a");
   return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
 };
 

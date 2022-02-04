@@ -4,8 +4,10 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineHowToReg } from "react-icons/md";
 import logo from "../../src/logo.svg";
+import { useGlobalContext } from "../context";
+
 function Navbar() {
-  const [user, setUser] = useState(false);
+  const { user } = useGlobalContext();
   const [showNav, setShowNAv] = useState(false);
 
   // close NAVBAR onclick

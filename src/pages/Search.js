@@ -1,9 +1,11 @@
 import React from "react";
-
+import SearchForm from "../components/SearchForm";
+import ArtisanList from "../components/ArtisanList";
 function Search() {
   return (
     <div>
-      <h1>Searchs</h1>
+      <SearchForm />
+      <ArtisanList />
     </div>
   );
 }

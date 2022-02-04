@@ -4,7 +4,8 @@ const AppContext = React.createContext();
 
 const Appprovider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTer] = useState("a");
+  const [user, setUser] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("a");
   return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
 };
 

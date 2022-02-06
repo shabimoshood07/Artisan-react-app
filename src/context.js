@@ -18,10 +18,11 @@ const Appprovider = ({ children }) => {
         `http://localhost:5000/api/v1/artisan?profession=${searchTerm}&address=${searchLocation}`
       );
       const data = await response.json();
-      const Data = data.artisan.artisan;
-      console.log(Data);
-      if (Data) {
-        setArtisan(Data);
+      console.log(data);
+      const { artisan } = data;
+      // console.log(artisan);
+      if (artisan) {
+        setArtisan(artisan);
       } else {
         setArtisan([]);
       }

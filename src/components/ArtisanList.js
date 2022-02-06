@@ -14,6 +14,9 @@ function ArtisanList() {
   return (
     <div>
       <h1>List</h1>
+      {artisan.map((artis) => {
+        return <Artisan key={artis._id} {...artis} />;
+      })}
     </div>
   );
 }

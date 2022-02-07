@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import SingleArtisan from "./pages/SingleArtisan";
 import Signup from "./pages/Signup";
 import LoginPage from "./pages/LoginPage";
+import Map from "./pages/map";
 
 // Import components
 import Artisan from "./components/Artisan";
@@ -26,6 +27,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<LoginPage />} />

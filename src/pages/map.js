@@ -6,7 +6,7 @@ function Map() {
   var map = tt.map({
     key: "94W33mAvweBLHwkwjGuAmUlwqrXQD6Wn",
     container: "map",
-    dragPan: !isMobileOrTablet(),
+    // dragPan: !isMobileOrTablet(),
   });
   map.addControl(new tt.FullscreenControl());
   map.addControl(new tt.NavigationControl());
@@ -14,13 +14,7 @@ function Map() {
   // tt.services.copyrights({
   //   key: "94W33mAvweBLHwkwjGuAmUlwqrXQD6Wn",
   // });
-  return (
-    <div>
-      <div id="map" className="map">
-        {map}
-      </div>
-    </div>
-  );
+  return <div>{/* <div id="map" className="map"></div> */}</div>;
 }
 
 export default Map;

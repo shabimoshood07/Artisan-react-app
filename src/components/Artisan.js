@@ -2,11 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Artisan({ _id, username, address, profession, profileImage }) {
   return (
-    <section key={_id}>
-      <div className="artisan-wrapper">
-        <h1>{username}</h1>
-        <h1>{address}</h1>
-        <h1>{profession}</h1>
+    <div className="artisan-wrapper" key={_id}>
+      <div className="artisan-heading">
         <div className="artisan-img-container">
           <img
             src={`http://localhost:5000/${profileImage}`}
@@ -14,9 +11,20 @@ function Artisan({ _id, username, address, profession, profileImage }) {
             alt="profile-image"
           />
         </div>
-        <Link to={`/artisan/${_id}`}>Details</Link>
+        <div className="artisan-details">
+          <h1 className="profession">{profession}</h1>
+          <h1>{username}</h1>
+          <h1>{address}</h1>
+        </div>
       </div>
-    </section>
+      <div className="artisan-footer">
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            Details
+          </Link>
+        </button>
+      </div>
+    </div>
   );
 }
 

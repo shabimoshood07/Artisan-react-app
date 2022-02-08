@@ -12,12 +12,14 @@ function ArtisanList() {
     return <h1> No artisan matched your search</h1>;
   }
   return (
-    <div>
+    <section>
       <h1>List</h1>
-      {artisan.map((artis) => {
-        return <Artisan key={artis._id} {...artis} />;
-      })}
-    </div>
+      <div>
+        {artisan.map((artis) => {
+          return <Artisan key={artis._id} {...artis} />;
+        })}
+      </div>
+    </section>
   );
 }
 

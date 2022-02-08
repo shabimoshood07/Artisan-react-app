@@ -777,3 +777,28 @@ form .button input:hover {
     width: 0;
   }
 }
+
+/* ***************************
+******************************
+ARTISAN PAGE
+*************************
+************************************/
+.artisan-wrapper {
+  border: solid blue;
+  margin: 2rem auto;
+  width: 80%;
+  height: 500px;
+  overflow: hidden;
+}
+.profile-image {
+  border: solid;
+  height: 100%;
+  width: 100%;
+}
+
+.artisan-img-container {
+  width: 50%;
+  height: 50%;
+  border: solid red;
+  overflow: hidden;
+}

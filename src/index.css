@@ -793,6 +793,11 @@ ARTISAN PAGE
   border-radius: 10px;
   background-color: rgba(24, 21, 40, 0.8);
   padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all 1s;
+}
+.artisan-wrapper:hover {
+  transform: scale(1.08);
 }
 .artisan-heading {
   display: flex;
@@ -832,10 +837,10 @@ ARTISAN PAGE
   margin-top: 1rem;
   align-items: center;
   appearance: none;
-  background-color: #181528;
+  background-color: transparent;
   font-weight: bolder;
   border-radius: 4px;
-  border-width: 0;
+  border: solid #fbf7c5 1px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -847,17 +852,14 @@ ARTISAN PAGE
   line-height: 1;
   list-style: none;
   padding: 0 0.5rem;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
   transition: all 0.5s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 13px;
+
   text-align: left;
+}
+.details-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fbf7c5;
 }
 @media screen and (min-width: 800px) {
   .artisan-img-container {

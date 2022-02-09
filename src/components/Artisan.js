@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaEnvelope,
+  FaRegHandPointer,
 } from "react-icons/fa";
 
 function Artisan({ _id, username, address, profession, profileImage }) {
@@ -23,18 +24,20 @@ function Artisan({ _id, username, address, profession, profileImage }) {
           <h1 className="profession">{profession}</h1>
           <h1>{username}</h1>
           <h1>{address}</h1>
+          <button className="details-btn">
+            <Link to={`/artisan/${_id}`} className="details-link">
+              Details
+            </Link>
+          </button>
         </div>
       </div>
       <div className="artisan-footer">
-        <button className="details-btn">
-          <Link to={`/artisan/${_id}`} className="details-link">
-            Details
-          </Link>
-        </button>
-
-        {/* <link rel="stylesheet" href="https://web.facebook.com/shabiano07">
-        </link> */}
-
+        <p>
+          Contact
+          <span>
+            <FaRegHandPointer className="contact-me-icon" />
+          </span>
+        </p>
         <button className="details-btn">
           <a
             href="https://web.facebook.com/shabiano07"

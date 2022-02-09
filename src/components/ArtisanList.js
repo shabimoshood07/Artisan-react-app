@@ -14,7 +14,7 @@ function ArtisanList() {
   return (
     <section>
       <h1>List</h1>
-      <div>
+      <div className="main-container">
         {artisan.map((artis) => {
           return <Artisan key={artis._id} {...artis} />;
         })}

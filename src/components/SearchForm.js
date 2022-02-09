@@ -19,20 +19,26 @@ function SearchForm() {
     e.preventDefault();
   };
   return (
-    <section>
+    <section className="form-container">
+      <h1 className="search heading">Search Artisans</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="user-input">
-          <label htmlFor="term">search profession</label>
+          {/* <label htmlFor="term">search profession</label> */}
           <input
             type="text"
-            // onChange={searchByProf}
+            placeholder="search profession"
             onChange={searchByLoc}
             ref={searchProfessionValue}
           />
         </div>
         <div className="user-input">
-          <label htmlFor="term">search location</label>
-          <input type="text" onChange={searchByLoc} ref={searchLocationValue} />
+          {/* <label htmlFor="term">search location</label> */}
+          <input
+            type="text"
+            placeholder="search location"
+            onChange={searchByLoc}
+            ref={searchLocationValue}
+          />
         </div>
       </form>
     </section>

@@ -783,58 +783,81 @@ form .button input:hover {
 ARTISAN PAGE
 *************************
 ************************************/
+.main-container {
+  /* border: solid; */
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+}
 .artisan-wrapper {
   border: solid #582c4d;
   margin: 2rem auto;
   width: 90%;
   max-width: 500px;
-  height: 250px;
+  min-height: 200px;
+  height: fit-content;
   overflow: hidden;
   border-radius: 10px;
   background-color: rgba(24, 21, 40, 0.8);
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: all 1s;
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: all 0.6s;
 }
 .artisan-wrapper:hover {
-  transform: scale(1.08);
+  /* transform: scale(1.08); */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .artisan-heading {
   display: flex;
-  /* justify-content: space-between; */
   gap: 2rem;
 }
 .profile-image {
   height: 100%;
   width: 100%;
-  border: 1px solid #ddd;
-  /* border-radius: 4px; */
   padding: 5px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .artisan-img-container {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
 }
 
 .artisan-details {
-  /* border: solid; */
   color: #fbf7c5;
-  padding-top: 0.5rem;
 }
 
 .artisan-details .profession {
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #d90368;
+  border: transparent;
+  margin-top: 0;
+  border-bottom: solid #fff000 2px;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  width: fit-content;
 }
 .artisan-details h1 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
+  border: solid #d90368 1px;
+  margin-top: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 5px;
+  text-align: justify;
 }
 .details-btn {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   align-items: center;
   appearance: none;
   background-color: transparent;
@@ -856,17 +879,66 @@ ARTISAN PAGE
 
   text-align: left;
 }
+.artisan-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
 .details-link {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: #fbf7c5;
 }
 @media screen and (min-width: 800px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .artisan-img-container {
     width: 150px;
     height: 150px;
   }
   .artisan-details {
-    padding-top: 1rem;
+    padding-top: 0;
   }
+  .details-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* ***************************
+******************************
+SEARCh FORM
+*************************
+************************************/
+
+.form-container {
+  /* border: solid; */
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  background: #582c4d;
+  padding: 1rem;
+  color: #fbf7c5;
+}
+.form-container form {
+  /* border: solid; */
+  width: 100%;
+}
+.user-input {
+  /* border: solid; */
+  width: 100%;
+  display: flex;
+}
+.form-container input {
+  width: 80%;
+  height: 30px;
+  margin: 0.5rem auto;
+  font-size: 1.2rem;
 }

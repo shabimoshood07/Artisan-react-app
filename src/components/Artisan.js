@@ -1,5 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+
 function Artisan({ _id, username, address, profession, profileImage }) {
   return (
     <div className="artisan-wrapper" key={_id}>
@@ -21,6 +29,31 @@ function Artisan({ _id, username, address, profession, profileImage }) {
         <button className="details-btn">
           <Link to={`/artisan/${_id}`} className="details-link">
             Details
+          </Link>
+        </button>
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            <FaFacebookF />
+          </Link>
+        </button>
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            <FaTwitter />
+          </Link>
+        </button>
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            <FaInstagram />
+          </Link>
+        </button>
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            <FaPhoneAlt />
+          </Link>
+        </button>
+        <button className="details-btn">
+          <Link to={`/artisan/${_id}`} className="details-link">
+            <FaEnvelope />
           </Link>
         </button>
       </div>

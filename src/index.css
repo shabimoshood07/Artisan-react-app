@@ -24,7 +24,7 @@ LOADING PAGE
 
 .ring {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 150px;
@@ -783,8 +783,19 @@ form .button input:hover {
 ARTISAN PAGE
 *************************
 ************************************/
+.background {
+  background-color: rgba(155, 147, 39, 0.2);
+  margin-top: 2rem;
+}
+.title-heading {
+  display: block;
+  color: #d90368;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
 .main-container {
-  /* border: solid; */
   margin: 0 auto;
   width: 95%;
   max-width: 1000px;
@@ -793,21 +804,19 @@ ARTISAN PAGE
   border: solid #582c4d;
   margin: 2rem auto;
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   min-height: 200px;
   height: fit-content;
   overflow: hidden;
   border-radius: 10px;
   background-color: rgba(24, 21, 40, 0.8);
   padding: 1rem;
-  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   transition: all 0.6s;
 }
 .artisan-wrapper:hover {
-  /* transform: scale(1.08); */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -818,12 +827,12 @@ ARTISAN PAGE
 .profile-image {
   height: 100%;
   width: 100%;
-  padding: 5px;
-  border-radius: 50%;
-  object-fit: cover;
+  /* padding: 5px; */
+  /* object-fit: cover; */
 }
 
 .artisan-img-container {
+  border-radius: 50%;
   width: 100px;
   height: 100px;
   overflow: hidden;
@@ -850,7 +859,6 @@ ARTISAN PAGE
 .artisan-details h1 {
   font-size: 0.8rem;
   text-transform: capitalize;
-  border: solid #d90368 1px;
   margin-top: 0.4rem;
   padding: 0.2rem;
   border-radius: 5px;
@@ -875,9 +883,14 @@ ARTISAN PAGE
   line-height: 1;
   list-style: none;
   padding: 0 0.5rem;
-  transition: all 0.5s;
-
+  transition: all 0.6s;
   text-align: left;
+}
+.details-btn:hover {
+  border: solid #d90368 1px;
+}
+.details-btn:hover .details-link {
+  color: #fff000;
 }
 .artisan-footer {
   display: flex;
@@ -891,6 +904,7 @@ ARTISAN PAGE
   text-decoration: none;
   font-size: 0.8rem;
   color: #fbf7c5;
+  transition: all 0.6s;
 }
 @media screen and (min-width: 800px) {
   .main-container {
@@ -904,6 +918,16 @@ ARTISAN PAGE
   .artisan-details {
     padding-top: 0;
   }
+
+  .artisan-wrapper {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .artisan-wrapper {
+    max-width: 500px;
+  }
   .details-link {
     font-size: 1.2rem;
   }
@@ -916,29 +940,36 @@ SEARCh FORM
 ************************************/
 
 .form-container {
-  /* border: solid; */
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 90%;
   max-width: 500px;
   background: #582c4d;
   padding: 1rem;
   color: #fbf7c5;
+  border-radius: 10px;
 }
 .form-container form {
   /* border: solid; */
   width: 100%;
 }
 .user-input {
-  /* border: solid; */
   width: 100%;
   display: flex;
 }
 .form-container input {
   width: 80%;
-  height: 30px;
+  height: 35px;
   margin: 0.5rem auto;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .form-container input {
+    font-size: 1.2rem;
+  }
 }

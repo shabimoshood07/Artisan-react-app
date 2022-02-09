@@ -9,11 +9,11 @@ function ArtisanList() {
     return <Loading />;
   }
   if (artisan.length < 1) {
-    return <h1> No artisan matched your search</h1>;
+    return <h1 className="title-heading"> No artisan matched your search!!</h1>;
   }
   return (
-    <section>
-      <h1>List</h1>
+    <section className="background">
+      <h1 className="title-heading">Artisans</h1>
       <div className="main-container">
         {artisan.map((artis) => {
           return <Artisan key={artis._id} {...artis} />;

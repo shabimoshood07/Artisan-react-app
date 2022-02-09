@@ -31,10 +31,18 @@ function Artisan({ _id, username, address, profession, profileImage }) {
             Details
           </Link>
         </button>
+
+        {/* <link rel="stylesheet" href="https://web.facebook.com/shabiano07">
+        </link> */}
+
         <button className="details-btn">
-          <Link to={`/artisan/${_id}`} className="details-link">
+          <a
+            href="https://web.facebook.com/shabiano07"
+            className="details-link"
+            target="_blank"
+          >
             <FaFacebookF />
-          </Link>
+          </a>
         </button>
         <button className="details-btn">
           <Link to={`/artisan/${_id}`} className="details-link">

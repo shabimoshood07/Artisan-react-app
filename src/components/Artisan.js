@@ -15,7 +15,7 @@ function Artisan({ _id, username, address, profession, profileImage }) {
       <div className="artisan-heading">
         <div className="artisan-img-container">
           <img
-            src={`http://localhost:5000/${profileImage}`}
+            src={profileImage}
             className="profile-image"
             alt="profile-image"
           />

@@ -9,7 +9,17 @@ import {
   FaRegHandPointer,
 } from "react-icons/fa";
 
-function Artisan({ _id, username, address, profession, profileImage }) {
+function Artisan({
+  _id,
+  username,
+  address,
+  profession,
+  profileImage,
+  phoneNumber,
+  socials,
+}) {
+  // const { facebook } = socials;
+  // console.log(socials.facebook);
   return (
     <div className="artisan-wrapper" key={_id}>
       <div className="artisan-heading">
@@ -39,11 +49,7 @@ function Artisan({ _id, username, address, profession, profileImage }) {
           </span>
         </p>
         <button className="details-btn">
-          <a
-            href="https://web.facebook.com/shabiano07"
-            className="details-link"
-            target="_blank"
-          >
+          <a href={socials} className="details-link" target="_blank">
             <FaFacebookF />
           </a>
         </button>
@@ -58,9 +64,13 @@ function Artisan({ _id, username, address, profession, profileImage }) {
           </Link>
         </button>
         <button className="details-btn">
-          <Link to={`/artisan/${_id}`} className="details-link">
+          <a
+            href={`tel:${phoneNumber.work}`}
+            className="details-link"
+            target="_blank"
+          >
             <FaPhoneAlt />
-          </Link>
+          </a>
         </button>
         <button className="details-btn">
           <Link to={`/artisan/${_id}`} className="details-link">

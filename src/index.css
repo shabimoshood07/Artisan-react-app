@@ -926,6 +926,7 @@ ARTISAN PAGE
   transition: all 0.6s;
 }
 .artisan-wrapper:hover .contact-me-icon {
+  color: #fff000;
   animation: bounce 1s infinite alternate;
   -webkit-animation: bounce 1s infinite alternate;
   /* transform: scale(1.5) rotate(90deg); */
@@ -941,10 +942,10 @@ ARTISAN PAGE
 }
 @-webkit-keyframes bounce {
   from {
-    transform: translateY(0px) rotate(90deg);
+    transform: scale(1.2) rotate(90deg);
   }
   to {
-    transform: translateY(-15px) rotate(90deg);
+    transform: scale(1.5) rotate(90deg);
   }
 }
 @media screen and (min-width: 800px) {

@@ -13,6 +13,7 @@ import axios from "axios";
 // };
 
 function Register() {
+  const [checking, setChecking] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -27,10 +28,6 @@ function Register() {
   const [fileInputState, setFileInputState] = useState("");
   const [file, setFile] = useState("");
 
-  const config = {
-    headers: { "content-type": "multipart/form-data" },
-  };
-
   const handleFileInputChange = (e) => {
     // const reader = new FileReader();
     // const file = e.target.files[0];
@@ -42,51 +39,18 @@ function Register() {
     setFile(e.target.value);
     // console.log(e.target.files[0]);
     // console.log(e.target.files[0].path);
-    setSelectedFile(e.target.file);
+    setSelectedFile(e.target.files[0]);
   };
 
-  // const handleSubmit = async (e) => {
-  //   let formData = new FormData(); //formdata object
-  //   console.log(
-  //     name,
-  //     email,
-  //     username,
-  //     phoneNumber,
-  //     gender,
-  //     otherPhoneNumber,
-  //     selectedFile
-  //   );
-  //   try {
-  //     formData.append("name", { name });
-  //     formData.append("email", { email });
-  //     formData.append("username", { username });
-  //     formData.append("address", { address });
-  //     formData.append("profession", { profession });
-  //     formData.append("password", { password });
-  //     formData.append("gender", { gender });
-  //     formData.append("phoneNumber", {
-  //       work: phoneNumber,
-  //       home: otherPhoneNumber,
-  //     });
-  //     formData.append("profileImage", { selectedFile });
-
-  //     e.preventDefault();
-  //     console.log(formData);
-
-  //     const { data } = await axios.post(
-  //       "http://localhost:5000/api/v1/auth/signup",
-  //       formData,
-  //       config
-  //     );
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
+  // const config = {
+  //   headers: { "content-type": "multipart/form-data" },
   // };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    setChecking(true);
     console.log(
       name,
+      email,
       username,
       phoneNumber,
       gender,
@@ -94,27 +58,69 @@ function Register() {
       selectedFile
     );
     try {
-      const user = await axios.post(
-        "http://localhost:5000/api/v1/auth/signup",
-        {
-          name: name,
-          username: username,
-          phoneNumber: { work: phoneNumber, home: otherPhoneNumber },
-          address: address,
-          email: email,
-          profession: profession,
-          password: password,
-          gender: gender,
-          file: selectedFile,
-        }
-      );
+      let formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("username", username);
+      formData.append("address", address);
+      formData.append("profession", profession);
+      formData.append("password", password);
+      formData.append("gender", gender);
+      formData.append("phoneNumber.work", phoneNumber);
+      formData.append("profileImage", selectedFile);
 
-      console.log(user);
-    } catch (error) {
-      console.log(error);
+      e.preventDefault();
+
+      const { data } = await axios.post(
+        "http://localhost:5000/api/v1/auth/signup",
+        formData
+        // config
+      );
+      console.log(data);
+      // axios
+      //   .post("https://httpbin.org/anything", formData, config)
+      //   .then((res) => console.log(res))
+      //   .catch((err) => console.log(err));
+      setChecking(false);
+    } catch (err) {
+      console.log(err);
+      // console.log(error.response.data);
+      setChecking(false);
     }
-    console.log("submit");
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(
+  //     name,
+  //     username,
+  //     phoneNumber,
+  //     gender,
+  //     otherPhoneNumber,
+  //     selectedFile
+  //   );
+  //   try {
+  //     const user = await axios.post(
+  //       "http://localhost:5000/api/v1/auth/signup",
+  //       {
+  //         name: name,
+  //         username: username,
+  //         phoneNumber: { work: phoneNumber, home: otherPhoneNumber },
+  //         address: address,
+  //         email: email,
+  //         profession: profession,
+  //         password: password,
+  //         gender: gender,
+  //         file: selectedFile,
+  //       }
+  //     );
+
+  //     console.log(user);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   console.log("submit");
+  // };
 
   return (
     <div className="reg-body">
@@ -122,7 +128,7 @@ function Register() {
         <div className="reg-title">Registration</div>
 
         {/* FORM */}
-        <form className="registration-form">
+        <form className="registration-form" encType="multipart/form-data">
           <div className="user-details">
             {/* FULL NAME */}
             <div className="input-box">
@@ -274,7 +280,7 @@ function Register() {
           </div>
 
           <button type="submit" className="button" onClick={handleSubmit}>
-            Submit
+            {checking ? "checking" : "submit"}
           </button>
         </form>
       </div>

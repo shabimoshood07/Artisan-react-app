@@ -6,6 +6,39 @@ function Signup() {
 
 export default Signup;
 
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   console.log(
+//     name,
+//     username,
+//     phoneNumber,
+//     gender,
+//     otherPhoneNumber,
+//     selectedFile
+//   );
+//   try {
+//     const user = await axios.post(
+//       "http://localhost:5000/api/v1/auth/signup",
+//       {
+//         name: name,
+//         username: username,
+//         phoneNumber: { work: phoneNumber, home: otherPhoneNumber },
+//         address: address,
+//         email: email,
+//         profession: profession,
+//         password: password,
+//         gender: gender,
+//         file: selectedFile,
+//       }
+//     );
+
+//     console.log(user);
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   console.log("submit");
+// };
+
 {
   /* SELECT OPTION */
 }

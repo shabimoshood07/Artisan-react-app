@@ -14,6 +14,8 @@ import axios from "axios";
 
 function Register() {
   const [checking, setChecking] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [error, setError] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -29,16 +31,7 @@ function Register() {
   const [file, setFile] = useState("");
 
   const handleFileInputChange = (e) => {
-    // const reader = new FileReader();
-    // const file = e.target.files[0];
-    // reader.readAsDataURL(file);
-    // console.log(file);
-    // console.log(reader);
-    // setSelectedFile(reader.result);
-    // setFileInputState(file);
     setFile(e.target.value);
-    // console.log(e.target.files[0]);
-    // console.log(e.target.files[0].path);
     setSelectedFile(e.target.files[0]);
   };
 
@@ -67,6 +60,7 @@ function Register() {
       formData.append("password", password);
       formData.append("gender", gender);
       formData.append("phoneNumber.work", phoneNumber);
+      formData.append("phoneNumber.home", otherPhoneNumber);
       formData.append("profileImage", selectedFile);
 
       e.preventDefault();
@@ -77,50 +71,12 @@ function Register() {
         // config
       );
       console.log(data);
-      // axios
-      //   .post("https://httpbin.org/anything", formData, config)
-      //   .then((res) => console.log(res))
-      //   .catch((err) => console.log(err));
       setChecking(false);
     } catch (err) {
-      console.log(err);
-      // console.log(error.response.data);
+      console.log(err.response.data.msg);
       setChecking(false);
     }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(
-  //     name,
-  //     username,
-  //     phoneNumber,
-  //     gender,
-  //     otherPhoneNumber,
-  //     selectedFile
-  //   );
-  //   try {
-  //     const user = await axios.post(
-  //       "http://localhost:5000/api/v1/auth/signup",
-  //       {
-  //         name: name,
-  //         username: username,
-  //         phoneNumber: { work: phoneNumber, home: otherPhoneNumber },
-  //         address: address,
-  //         email: email,
-  //         profession: profession,
-  //         password: password,
-  //         gender: gender,
-  //         file: selectedFile,
-  //       }
-  //     );
-
-  //     console.log(user);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   console.log("submit");
-  // };
 
   return (
     <div className="reg-body">
@@ -280,7 +236,7 @@ function Register() {
           </div>
 
           <button type="submit" className="button" onClick={handleSubmit}>
-            {checking ? "checking" : "submit"}
+            {checking ? "checking...." : "submit"}
           </button>
         </form>
       </div>

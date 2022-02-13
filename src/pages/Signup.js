@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Register from "../components/Register";
+import RegUser from "../components/RegUser";
 function Signup() {
-  return <Register />;
+  const [regUser, setRegUser] = useState(false);
+  const [regArtisan, setRegArtisan] = useState(true);
+
+  const setSwitchToArtisan = () => {
+    setRegArtisan(true);
+    setRegUser(false);
+  };
+  const setSwitchToUser = () => {
+    setRegArtisan(false);
+    setRegUser(true);
+  };
+  return (
+    <>
+      <div className="signup-btn-container">
+        <button onClick={setSwitchToArtisan}>Signup as artisan</button>
+        <button onClick={setSwitchToUser}>Signup as User</button>
+      </div>
+      <div>{regArtisan ? <Register /> : <RegUser />}</div>
+    </>
+  );
 }
 
 export default Signup;

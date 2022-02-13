@@ -35,10 +35,6 @@ function Register() {
     setSelectedFile(e.target.files[0]);
   };
 
-  // const config = {
-  //   headers: { "content-type": "multipart/form-data" },
-  // };
-
   const handleSubmit = async (e) => {
     setChecking(true);
     console.log(
@@ -59,8 +55,8 @@ function Register() {
       formData.append("profession", profession);
       formData.append("password", password);
       formData.append("gender", gender);
-      formData.append("phoneNumber.work", phoneNumber);
-      formData.append("phoneNumber.home", otherPhoneNumber);
+      formData.append("workPhoneNumber", phoneNumber);
+      formData.append("homePhoneNumber", otherPhoneNumber);
       formData.append("profileImage", selectedFile);
 
       e.preventDefault();
@@ -68,7 +64,6 @@ function Register() {
       const { data } = await axios.post(
         "http://localhost:5000/api/v1/auth/signup",
         formData
-        // config
       );
       console.log(data);
       setChecking(false);
@@ -81,7 +76,7 @@ function Register() {
   return (
     <div className="reg-body">
       <div className="reg-container">
-        <div className="reg-title">Registration</div>
+        <div className="reg-title">Artisan Registration</div>
 
         {/* FORM */}
         <form className="registration-form" encType="multipart/form-data">

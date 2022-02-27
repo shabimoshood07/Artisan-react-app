@@ -369,12 +369,8 @@ LANDING PAGE
   background-color: rgba(24, 21, 40, 0.8);
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px; */
 }
 .home .landing-text p {
-  /* border: solid; */
   text-align: justify;
   font-size: 16px;
   line-height: 20px;
@@ -590,7 +586,7 @@ LOGIN JS
   font-size: 12px;
 }
 
-.login-wrapper form button {
+.login-button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: transparent;
   background-color: #582c4d;
@@ -609,7 +605,7 @@ LOGIN JS
   transition: all 0.7s ease-in-out;
 }
 
-.login-wrapper button:hover {
+.login-button:hover {
   color: #582c4d;
   background-color: #fbf7c5;
 }
@@ -619,12 +615,37 @@ LOGIN JS
 REGISTER JS
 *************************
 ************************************/
+.signup-option-btn-container {
+  max-width: 700px;
+  margin: 1rem auto;
+  /* border: solid; */
+  padding: 10px;
+}
+
+.signup-btn {
+  padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* border: transparent; */
+  background-color: #582c4d;
+  color: #fbf7c5;
+  font-weight: bolder;
+  border-radius: 4px;
+  cursor: pointer;
+  /* height: 40px; */
+  /* padding: 0 0.5rem; */
+  transition: all 0.5s;
+  width: 150px;
+  margin: 0 auto;
+  letter-spacing: 0.08rem;
+  font-size: 1.1rem;
+  transition: all 0.7s ease-in-out;
+}
 .reg-body {
   display: flex;
-  /* height: 100vh; */
   justify-content: center;
   align-items: center;
   padding: 10px;
+  /* border: solid; */
 }
 
 .reg-container {
@@ -757,6 +778,21 @@ form .button input {
 form .button input:hover {
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
+
+.about-input-box {
+  /* border: solid; */
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+.about-input-box textarea {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  padding: 0.5rem;
+  resize: none;
+}
+
 @media (max-width: 584px) {
   .reg-container {
     max-width: 100%;
@@ -768,16 +804,16 @@ form .button input:hover {
   form .gender-details .category {
     width: 100%;
   }
-
-  /* .reg-container form .user-details{
-  max-height: 300px;
-  overflow-y:auto;
-} */
   .user-details::-webkit-scrollbar {
     width: 0;
   }
 }
 
+@media screen and (min-width: 750px) {
+  .signup-option-btn-container {
+    padding-left: 0px;
+  }
+}
 /* ***************************
 ******************************
 ARTISAN PAGE
@@ -1023,4 +1059,14 @@ SEARCh FORM
   .form-container input {
     font-size: 1.2rem;
   }
+}
+
+/* ***************************
+******************************
+SINGLE ARTISAN PAGE
+*************************
+************************************/
+
+.single-artisan-container {
+  border: solid;
 }

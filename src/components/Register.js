@@ -20,14 +20,14 @@ function Register() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [otherPhoneNumber, setOtherPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [gender, setGender] = useState("");
   const [profession, setProfession] = useState("");
   const [password, setPassword] = useState("");
+  const [about, setAbout] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
-  const [fileInputState, setFileInputState] = useState("");
+  // const [fileInputState, setFileInputState] = useState("");
   const [file, setFile] = useState("");
 
   const handleFileInputChange = (e) => {
@@ -36,40 +36,49 @@ function Register() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     setChecking(true);
-    console.log(
-      name,
-      email,
-      username,
-      phoneNumber,
-      gender,
-      otherPhoneNumber,
-      selectedFile
-    );
-    try {
-      let formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("username", username);
-      formData.append("address", address);
-      formData.append("profession", profession);
-      formData.append("password", password);
-      formData.append("gender", gender);
-      formData.append("workPhoneNumber", phoneNumber);
-      formData.append("homePhoneNumber", otherPhoneNumber);
-      formData.append("profileImage", selectedFile);
+    console.log(about);
 
-      e.preventDefault();
+    if (
+      !name ||
+      !email ||
+      !username ||
+      !address ||
+      !profession ||
+      !password ||
+      !gender ||
+      !phoneNumber
+    ) {
+      setChecking(false);
+      alert("Enter all compulsory fields (*)");
+    } else {
+      try {
+        let formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("username", username);
+        formData.append("address", address);
+        formData.append("profession", profession);
+        formData.append("password", password);
+        formData.append("gender", gender);
+        formData.append("phoneNumber", phoneNumber);
+        formData.append("profileImage", selectedFile);
+        formData.append("about", about);
 
-      const { data } = await axios.post(
-        "http://localhost:5000/api/v1/auth/signup",
-        formData
-      );
-      console.log(data);
-      setChecking(false);
-    } catch (err) {
-      console.log(err.response.data.msg);
-      setChecking(false);
+        const { data } = await axios.post(
+          "https://artisan-dot-com-api.herokuapp.com/api/v1/auth/signup",
+          formData
+        );
+        console.log(data);
+        setChecking(false);
+      } catch (err) {
+        console.log(err.response);
+        const errArray = err.response.data;
+        alert(errArray.msg);
+        console.log(errArray);
+        setChecking(false);
+      }
     }
   };
 
@@ -91,6 +100,7 @@ function Register() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
+              {}
             </div>
 
             {/* COMPANY NAME */}
@@ -107,24 +117,13 @@ function Register() {
 
             {/* PHONE NUMBER WORK */}
             <div className="input-box">
-              <span className="details">Phone Number(work)</span>
+              <span className="details">Phone Number</span>
               <input
                 type="text"
                 placeholder="Phone Number"
-                required
+                // required
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-              ></input>
-            </div>
-
-            {/* PHONE NUMBER OTHER */}
-            <div className="input-box">
-              <span className="details">Phone Number(optional)</span>
-              <input
-                type="text"
-                placeholder="Phone Number"
-                value={otherPhoneNumber}
-                onChange={(e) => setOtherPhoneNumber(e.target.value)}
               ></input>
             </div>
 
@@ -168,7 +167,7 @@ function Register() {
             <div className="input-box">
               <span className="details">Password</span>
               <input
-                type="text"
+                type="password"
                 placeholder="Enter password"
                 required
                 value={password}
@@ -180,7 +179,7 @@ function Register() {
             <div className="input-box">
               <span className="details">Confirm Password</span>
               <input
-                type="text"
+                type="password"
                 placeholder="Confirm password"
                 required
                 value={confirmPassword}
@@ -190,7 +189,7 @@ function Register() {
 
             {/* GENDER*/}
             <div className="input-box">
-              <span className="details">gender</span>
+              <span className="details">Gender</span>
               <select
                 name="gender"
                 id=""
@@ -224,13 +223,21 @@ function Register() {
                 type="file"
                 placeholder="select profile picture"
                 value={file}
-                // onChange={(e) => setFile(e.target.value)}
                 onChange={handleFileInputChange}
               ></input>
             </div>
           </div>
-
-          <button type="submit" className="button" onClick={handleSubmit}>
+          <div className="about-input-box">
+            <span className="details">About</span>
+            <textarea
+              cols="5"
+              rows="10"
+              placeholder="not more than 500 words"
+              value={about}
+              onChange={(e) => setAbout(e.target.value)}
+            ></textarea>
+          </div>
+          <button type="submit" className="login-button" onClick={handleSubmit}>
             {checking ? "checking...." : "submit"}
           </button>
         </form>

@@ -1,14 +1,27 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 function RegUser() {
   const [checking, setChecking] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const user = await axios.post(
+        "https://artisan-dot-com-api.herokuapp.com/api/v1/artisan/regUser/signup",
+        {
+          username: username,
+          phoneNumber: phoneNumber,
+          password: password,
+        }
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.response.data);
+    }
   };
 
   return (
@@ -19,27 +32,27 @@ function RegUser() {
         {/* FORM */}
         <form className="registration-form" encType="multipart/form-data">
           <div className="user-details">
-            {/* FULL NAME */}
+            {/* USERNAME */}
             <div className="input-box">
-              <span className="details">Full Name</span>
+              <span className="details">Username</span>
               <input
                 type="text"
-                placeholder="Enter name here"
+                placeholder="Username"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               ></input>
             </div>
 
-            {/* EMAIL*/}
+            {/* PHONE NUMBER*/}
             <div className="input-box">
-              <span className="details">Email</span>
+              <span className="details">Phone Number</span>
               <input
                 type="email"
-                placeholder="Enter your email "
+                placeholder="Phone number "
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               ></input>
             </div>
 
@@ -68,7 +81,7 @@ function RegUser() {
             </div>
           </div>
 
-          <button type="submit" className="button" onClick={handleSubmit}>
+          <button type="submit" className="login-button" onClick={handleSubmit}>
             {checking ? "checking...." : "submit"}
           </button>
         </form>

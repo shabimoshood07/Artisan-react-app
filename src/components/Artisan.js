@@ -18,8 +18,6 @@ function Artisan({
   phoneNumber,
   socials,
 }) {
-  // const { facebook } = socials;
-  // console.log(socials.facebook);
   return (
     <div className="artisan-wrapper" key={_id}>
       <div className="artisan-heading">
@@ -65,7 +63,7 @@ function Artisan({
         </button>
         <button className="details-btn">
           <a
-            href={`tel:${phoneNumber.work}`}
+            href={`tel:${phoneNumber}`}
             className="details-link"
             target="_blank"
           >
@@ -73,9 +71,13 @@ function Artisan({
           </a>
         </button>
         <button className="details-btn">
-          <Link to={`/artisan/${_id}`} className="details-link">
+          <a
+            href={`sms:${phoneNumber}`}
+            className="details-link"
+            target="_blank"
+          >
             <FaEnvelope />
-          </Link>
+          </a>
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-const url = "http://localhost:5000/api/v1/artisan";
+// const url = "http://localhost:5000/api/v1/artisan";
 // const url2 = "http://localhost:5000/api/v1/auth";
-const url3 = "http://localhost:5000/api/v1/artisan?profession=&address=";
+// const url3 = "http://localhost:5000/api/v1/artisan?profession=&address=";
 const AppContext = React.createContext();
 
 const Appprovider = ({ children }) => {
@@ -13,9 +13,10 @@ const Appprovider = ({ children }) => {
 
   const fetchArtisan = async () => {
     setLoading(true);
-    try {
+    https: try {
       const response = await fetch(
-        `http://localhost:5000/api/v1/artisan?profession=${searchTerm}&address=${searchLocation}`
+        `https://artisan-dot-com-api.herokuapp.com/
+api/v1/artisan?profession=${searchTerm}&address=${searchLocation}`
       );
       const data = await response.json();
       console.log(data);
@@ -46,6 +47,8 @@ const Appprovider = ({ children }) => {
         setLoading,
         setSearchTerm,
         setSearchLocation,
+        setArtisan,
+        fetchArtisan,
       }}
     >
       {children}

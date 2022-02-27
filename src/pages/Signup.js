@@ -15,9 +15,16 @@ function Signup() {
   };
   return (
     <>
-      <div className="signup-btn-container">
-        <button onClick={setSwitchToArtisan}>Signup as artisan</button>
-        <button onClick={setSwitchToUser}>Signup as User</button>
+      <div className="signup-option-btn-container">
+        {regArtisan ? (
+          <button className="signup-btn" onClick={setSwitchToUser}>
+            Signup as User
+          </button>
+        ) : (
+          <button className="signup-btn" onClick={setSwitchToArtisan}>
+            Signup as Artisan
+          </button>
+        )}
       </div>
       <div>{regArtisan ? <Register /> : <RegUser />}</div>
     </>
